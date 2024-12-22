@@ -1,5 +1,8 @@
 module Enumerable
   # Your code goes here
+  def my_each_with_index(&block)
+    each_with_index(&block)
+  end
 end
 
 # You will first have to define my_each

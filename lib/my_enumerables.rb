@@ -3,6 +3,14 @@ module Enumerable
   def my_each_with_index(&block)
     each_with_index(&block)
   end
+
+  def my_select
+    selected = []
+    each do |elem|
+      selected << elem if yield(elem)
+    end
+    selected
+  end
 end
 
 # You will first have to define my_each

@@ -25,6 +25,15 @@ module Enumerable
     end
     is_true
   end
+
+  def my_none?
+    is_false = false
+    each do |elem|
+      is_false = yield(elem) ? false : true
+      break unless is_false
+    end
+    is_false
+  end
 end
 
 # You will first have to define my_each

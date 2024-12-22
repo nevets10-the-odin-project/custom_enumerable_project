@@ -52,6 +52,14 @@ module Enumerable
     end
     new_arr
   end
+
+  def my_inject(initial)
+    result = initial
+    each do |elem|
+      result = yield(result, elem)
+    end
+    result
+  end
 end
 
 # You will first have to define my_each

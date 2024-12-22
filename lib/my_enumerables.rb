@@ -16,6 +16,15 @@ module Enumerable
     end
     selected
   end
+
+  def my_all?
+    is_true = true
+    each do |elem|
+      is_true = yield(elem) ? true : false
+      break unless is_true
+    end
+    is_true
+  end
 end
 
 # You will first have to define my_each
